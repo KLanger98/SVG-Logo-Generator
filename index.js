@@ -7,6 +7,7 @@ const Circle = require('./lib/shapes')
 
 
 //Ask for user prompts
+let results = promptUser();
 
 // Wait for user to complete prompts 
 
