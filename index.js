@@ -2,33 +2,21 @@
 //Import an SVG image class 
 const promptUser = require("./lib/handleInput")
 const writeFile = require('./lib/writeFile');
-const {Circle, Square, Triangle} = require('./lib/shapes')
 const Logo = require('./lib/generateImageMarkdown')
 
 
 
-//Ask for user prompts
-
-
+//Prompt User for image details awaiting returned promise
 promptUser()
     .then((response) => {
-        console.log(response)
+        //Generate a logo object
         let logo = new Logo(response)
+        //Construct a shape as a value on the logo object
         logo.constructShape(logo.shape)
-        console.log(logo)
+        //write file from logo object markdown generator function
         writeFile(logo.generateMarkdown());
     })
     .catch((error) => {
         console.error(error)
     })
     
-    
-function fetchShape(){
-
-}
-
-// Generate desired shapes
-
-//Generate markup
-
-//generate file 
